@@ -1,0 +1,56 @@
+<html class="no-js" lang="ja">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>トップ</title>
+    {% include "./common/commonHead.html" %} 
+  </head>
+
+  <body id="page-top">
+{% include "./common/commonPageMenu.html" %}
+{% include "./common/commonPageHeader.html" %}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+      <div class="jumbotron jumbotron-fluid">
+		  <div class="container">
+		    <h1 class="display-4">Trending topics</h1>
+		    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+		  </div>
+		</div>
+      </section>
+      <!-- Main content -->
+      <section>
+         <div  class ="result">
+	      {% if data %}     		
+			<ul>
+			  {% for item in data %}
+				<div class ="news">
+					<div class ="title">
+						<h4><a href = "{{ item.url }}" target="_blank"><b>{{ item.title }}</b></a></h4>
+					</div>
+					<div>
+						<p>{{item.text}}</p>
+					</div>
+				</div>
+			  {% endfor %}
+			</ul>
+			{% endif %}
+	      </div>
+      </section>
+    </div>
+    <!-- /.content-wrapper -->
+  {% include "./common/commonScripts.html" %}
+   <script>
+      const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
+    </script>
+  </body>
+</html>
+

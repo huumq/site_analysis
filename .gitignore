@@ -1,0 +1,9 @@
+!.gitignore
+!*
+.git/
+.settings/
+.project
+.pydevproject
+env/
+__pycache__/
+logs/

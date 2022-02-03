@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Postgresql Connection</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Theme style -->
+  {% load static %}
+	<link rel="stylesheet" href="{% static 'css/adminlte1.min.css' %}">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Connect to Postgresql</p>
+        {% if error %}
+	    <div class="alert alert-danger alert-dismissible">
+	    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	    <strong>Connect error!</strong> {{error}}
+	   </div>
+	   {% endif %}
+      <form action={% url 'index' %} method ="post">
+     	 {% csrf_token %}
+        <div class="input-group mb-3">
+          <input type="text" name="host-name" value ="127.0.0.1" class="form-control" placeholder="Hostname">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="number" name="port" value ="5432" class="form-control" placeholder="Port">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" name="db-name" value ="mchc" class="form-control" placeholder="Database">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" name="user-name" value ="postgres" class="form-control" placeholder="Username">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+         <div class="input-group mb-3">
+          <input type="password" name="password" value ="Lu@nnq1910" class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+		 <div class="col-8">
+            <button type="submit" class="btn btn-primary btn-block">Test connect</button>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Connect</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

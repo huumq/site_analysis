@@ -1,0 +1,37 @@
+<html class="no-js" lang="ja">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>トップ</title>
+    {% include "./common/commonHead.html" %} 
+  </head>
+
+  <body id="page-top">
+{% include "./common/commonPageMenu.html" %}
+{% include "./common/commonPageHeader.html" %}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>トップページ
+          <small>罠サービスへようこそ</small>
+        </h1>
+      </section>
+      <!-- Main content -->
+      <section class="content">
+        <!-- Default box -->
+        <div class="box box-success box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">メンテナンス情報</h3>
+          </div>
+          <div class="box-body" id="maint_body">
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- /.content-wrapper -->
+  {% include "./common/commonScripts.html" %}
+  </body>
+</html>
